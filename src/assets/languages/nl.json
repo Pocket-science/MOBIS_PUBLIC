@@ -1,0 +1,109 @@
+{
+  "menu": {
+    "account": "Account",
+    "signup": "Registreren",
+    "signin": "Inloggen",
+    "signout": "Uitloggen",
+    "profile": "Profiel",
+    "project": "Project",
+    "information": "Informatie",
+    "overview": "Overzicht",
+    "tutorial": "Training",
+    "contribute": "Draag bij!",
+    "classify": "Classificeren",
+    "my classifications" : "Mijn Classificaties",
+    "ranking" : "Ranglijst",
+    "results" : "Resultaten",
+    "settings" : "Instellingen",
+    "options" : "Opties"
+  },
+  "measure":{
+    "welcome-to-mobis": "Welkom bij M O B I S",
+    "measure": "Observeren",
+    "water-quality": "Waterkwaliteit",
+    "air-quality": "Luchtkwaliteit",
+    "biodiversity": "Biodiversiteit",
+    "new-mini-secchi-observation": "Nieuwe Mini Secchi Observatie",
+    "new-ispex-observation": "Nieuwe iSPEX Water Observatie",
+    "new-canairiopm2-observation": "Nieuwe CanAir.io PM2.5 Observatie",
+    "new-canairico2-observation": "Nieuwe CanAir.io CO2 Observatie",
+    "new-plantnet-observation": "Nieuwe Pl@ntNet Observatie"
+  },
+  "homePage": {
+    "page1": {
+      "ion-card-title": "",
+      "ion-card-subtitle": "",
+      "ion-card-content": ""
+  }},
+
+  "profilePage": {
+    "title": "profiel",
+    "select avatar" : "Selecteer Avatar",
+    "name" : "Naam",
+    "verify email" : "Verifieer email",
+    "unverified email" : "Ongeverifieerde email",
+    "unverified email text" : "Je email adres is nog niet geverifieerd. Dit betekent dat je kunt meedoen met het project, maar je mag geen veranderingen aanbrengen aan bestaande data of meedoen met groepsdiscussies. Tijdens de registratie heb je als het goed is een email ontvangen. Zodra je de link klikt en je mail verifieert kun je zonder beperkingen meedoen aan het project. Als je de mail niet ontvangen hebt kun je een nieuwe aanvragen door op de knop Verifieer Email te klikken. Zorg er ook voor dat je je spam mailbox controleert." ,
+    "anonymous login": "Anoniem ingelogd",
+    "anonymous login text": "Je bent anoniem ingelogd. Zolang als je ingelogd blijft worden je bijdragen geregistreerd met je huidige (anonieme) userId maar deze kunnen niet opgehaald worden door jou. Zodra je uit logt kan dit userId niet meer gebruikt worden. Je bijdragen blijven wel meetellen in het project, maar ze zijn op geen enkele manier meer meer terug te leiden naar jou. Je kunt daarna nogmaals anoniem inloggen om bij te blijven dragen aan het project. Als je echter je bijdragen wilt kunnen bekijken en bewerken, of wilt meedoen met de ranglijst en het beloningsprogramma, dan kun je je registreren met een email/wachtwoord of inloggen met een van de beschikbare authenticatie methoden",
+    "logged out": "Je bent uitgelogd.",
+    "verification-mail-sent": "Email verificatie gestuurd",
+    "check-also-spam": "Controleer ook je spam mailbox",
+    "processing-image": "Plaatje verwerken...",
+    "upload-failed" : "Upload mislukt",
+    "problem-uploading-avatar" : "Probleem bij het uploaden van je avatar"
+  },
+  "signupPage": {
+    "title": "registreren",
+    "name" : "Naam",
+    "password" : "Wachtwoord",
+    "password-invalid": "Wachtwoord moet minimaal 6 karakters bevatten",
+    "email-invalid": "Email is niet geldig",
+    "create-account-button" : "Registreer",
+    "have-account" : "Heb je al een account?",
+    "name-placeholder": "Naam",
+    "email-placeholder": "Email",
+    "password-placeholder": "Wachtwoord",
+    "creating-account": "Account aanmaken...",
+    "registration-failed": "Registration mislukt",
+    "please-try-again": "Probeer het opnieuw"
+  },
+  "resetpwPage": {
+    "title": "herstel wachtwoord",
+    "email-placeholder": "Email",
+    "send-email-button": "Stuur herstel email",
+    "email-invalid": "Email is niet geldig",
+    "password-reset-email-sent": "Password reset email sent"
+  },
+  "loginPage":{
+    "title": "inloggen",
+    "password-invalid": "Wachtwoord moet minimaal 6 karakters bevatten",
+    "email-invalid": "Email is niet geldig",
+    "email-placeholder": "Email",
+    "password-placeholder": "Wachtwoord",
+    "login-button": "Login",
+    "login-username": "Login met gebruikersnaam",
+    "login-google": "Login met Google",
+    "login-apple": "Login met Apple",
+    "login-anonymous": "Anonieme login",
+    "goto-signup": "Of klik hier om te registreren",
+    "forgot-password": "Wachtwoord vergeten?",
+    "logging-in-with-email": "Inloggen met email...",
+    "logging-in-with-apple": "Inloggen met Apple...",
+    "logging-in-with-google": "Inloggen met Google...",
+    "logging-in-anonymously": "Anoniem inloggen...",
+    "login-failed": "Inloggen mislukt",
+    "please-try-again" : "Probeer het opnieuw"
+  },
+
+  "optionsPage": {
+    "title": "Opties",
+    "ion-card-title": "Instellingen",
+    "general-settings-label" : "Algemene instellingen",
+    "language-label": "Taal",
+    "languageSelectPlaceholder": "Kies taal"
+  },
+  "popups": {
+    "logging-in": "Inloggen...",
+    "password-reset-email-sent": "Wachtwoord herstel email gestuurd"
+   }
+}

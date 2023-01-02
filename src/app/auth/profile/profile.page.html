@@ -1,0 +1,110 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home" icon="chevron-back-outline"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">{{ "profilePage.title" | translate }}</ion-title>
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="user !== null">
+  <ion-card  *ngIf="!isAnonymous && user !== null">
+    <ion-card-content>
+
+
+  <ion-grid>
+    <ion-row>
+      <div class="preview">
+        <ion-avatar (click)="changeImage()">
+          <img
+            *ngIf="photoURL; else placeholder_avatar;"
+            [src]="photoURL"
+            referrerpolicy="no-referrer"
+          />
+          <ng-template #placeholder_avatar>
+            <div class="fallback">
+              <p>{{ "profilePage.select avatar" | translate }}</p>
+            </div>
+          </ng-template>
+        </ion-avatar>
+      </div>
+    </ion-row>
+  </ion-grid>
+  <ion-grid *ngIf="!isAnonymous && user !== null">
+    <ion-row>
+      <ion-col>
+        <span class="text"><ion-label class="title">{{ "profilePage.name" | translate }}</ion-label></span>
+        <span title="Click to change" *ngIf="!editDisplayName" (click)="editDisplayNameField()">
+          <ion-icon class="icon-edit" name="create-outline" ></ion-icon>
+        </span>
+        <span title="Save" *ngIf="editDisplayName" (click)="updateUserName(displayName)">
+          <ion-icon class="icon-edit" name="save-outline"></ion-icon>
+        </span>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col><ion-input class="ion-no-padding" [(ngModel)]="displayName" [readonly]="!editDisplayName" [placeholder]="displayName"></ion-input>
+</ion-col></ion-row>
+    <ion-row>
+      <ion-col>
+        <span class="text"><ion-label class="title">Email</ion-label></span>
+        <span title="Verified"
+          ><ion-icon
+            class="icon-verified"
+            name="checkmark-circle-outline"
+            *ngIf="emailVerified"
+          ></ion-icon
+        ></span>
+        <span title="Unverified"
+          ><ion-icon
+            class="icon-not-verified"
+            name="close-circle-outline"
+            *ngIf="!emailVerified"
+          ></ion-icon
+        ></span>
+      </ion-col>
+      </ion-row>
+      <ion-row>
+      <ion-col>
+        <ion-label class="text">{{email}}</ion-label>
+      </ion-col>
+      <ion-button
+          size="small"
+          (click)="verifyEmail()"
+          *ngIf="(!emailVerified) && (email !== null)"
+          >{{ "profilePage.verify email" | translate }}</ion-button>
+    </ion-row>
+</ion-grid>
+<ion-grid *ngIf="!emailVerified && !isAnonymous && user !== null">
+    <ion-row >
+      <ion-col><b>
+        {{ "profilePage.unverified email" | translate }}</b>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        {{ "profilePage.unverified email text" | translate }}
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-card-content>
+</ion-card>
+
+  <ion-card *ngIf="isAnonymous">
+    <ion-card-header>{{ "profilePage.anonymous login" | translate }}
+      </ion-card-header>
+    <ion-card-content
+      >{{ "profilePage.anonymous login text" | translate }}
+      </ion-card-content>
+  </ion-card>
+</ion-content>
+
+<ion-content *ngIf="user === null">
+  <ion-card>
+    <ion-card-header>{{ "profilePage.logged out" | translate }}</ion-card-header>
+    <ion-card-content>Please <a routerLink="['/login']">login</a> to view your profile</ion-card-content>
+  </ion-card>
+</ion-content>

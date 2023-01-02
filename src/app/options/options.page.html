@@ -1,0 +1,33 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home" icon="chevron-back-outline"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">  {{ "optionsPage.title" | translate }}</ion-title>
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>
+{{"optionsPage.ion-card-title" | translate}}     </ion-card-title>
+
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+      <ion-item color="secondary">{{ "optionsPage.general-settings-label" | translate }}</ion-item>
+      <ion-item><ion-label class="bold">{{ "optionsPage.language-label" | translate }} </ion-label>
+        <ion-select value="en" [(ngModel)]="language" (ionChange)="setLanguage()" [placeholder]="'optionsPage.languageSelectPlaceholder' | translate">
+          <ion-select-option value="en">English</ion-select-option>
+          <ion-select-option value="nl">Nederlands</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

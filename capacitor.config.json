@@ -1,0 +1,15 @@
+{
+  "appId": "nl.ddq.mobisapp",
+  "appName": "mobisapp",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "dist/demo",
+  "cordova": {},
+  "plugins": {
+    "GoogleAuth": {
+      "scopes": ["profile", "email"],
+      "clientId": "778522712103-tqkc468qermr7hvbqsmm2p2ueglcmjsi.apps.googleusercontent.com",
+      "forceCodeForRefreshToken" : true
+    }
+  }
+}

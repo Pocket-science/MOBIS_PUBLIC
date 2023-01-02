@@ -1,0 +1,65 @@
+
+#close {
+  position: absolute;
+  bottom: 30px;
+  left: calc(50% -  160px);
+  width: 50px;
+  height: 50px;
+  z-index: 99999;
+}
+
+#rgb {
+  position: absolute;
+  bottom: 30px;
+  left: calc(50% - 140px);
+  width: 50px;
+  height: 50px;
+  z-index: 99999;
+}
+
+
+
+
+#grey {
+  position: absolute;
+  bottom: 30px;
+  left: calc(50% - 80px);
+  width: 50px;
+  height: 50px;
+  z-index: 99999;
+}
+
+
+
+#sky {
+  position: absolute;
+  bottom: 30px;
+  left: calc(50% - 20px);
+  width: 50px;
+  height: 50px;
+  z-index: 99999;
+}
+
+
+#water{
+  position: absolute;
+  bottom: 30px;
+  left: calc(50% + 40px);
+  width: 50px;
+  height: 50px;
+  z-index: 99999;
+}
+
+
+#free {
+  position: absolute;
+  bottom: 30px;
+  left: calc(50% + 100px);
+  width: 50px;
+  height: 50px;
+  z-index: 99999;
+}
+
+ion-content { --background: black;}
+
+

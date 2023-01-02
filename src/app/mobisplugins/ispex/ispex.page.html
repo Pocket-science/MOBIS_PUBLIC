@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>New iSPEX observation</ion-title>
+
+    <ion-buttons slot="start">
+      <ion-menu-button slot="start"></ion-menu-button>
+      <ion-back-button></ion-back-button>
+
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true">
+  <div *ngIf="image">
+      <img #image  id="img" [src]="image"  alt="" srcset="">
+  </div>
+
+
+  <ion-button (click)="openCamera()" color="primary" expand="block" fill="solid" size="default">
+     Attach the iSPEX unit and open camera
+  </ion-button>
+
+
+  <ion-card>
+    <ion-card-title>Mount iSPEX2 unit on phone</ion-card-title>
+    <ion-card-subtitle></ion-card-subtitle>
+    <ion-card-content>1. If you have a smartphone
+      cover or case, remove it.<br>
+      2. Take your smartphone in
+      one hand and the iSPEX2
+      add-on in the other. If this
+      is not possible, use a table
+      or similar surface to lay the
+      smartphone on.<br>
+      <ion-img src="assets/images/ispex-mount1.png"></ion-img>
+      3. The iSPEX2 add-on will be mounted on the back side of the phone and the clip will be on the front screen.
+      Slide your smartphone into the smartphone clip. You may need to use your other
+      hand to slightly open the clip, especially for thicker
+      smartphones.<br>
+      <ion-img src="assets/images/ispex-mount3.png"></ion-img>
+      4. Slide the iSPEX2
+      add-on over your
+      smartphone until the
+      bars on the top and
+      left sides fit snugly.<br>
+      <ion-img src="assets/images/ispex-mount2.png"></ion-img>
+      5. Firmly press the suction cup on the
+      back of the smartphone until it is
+      clearly attached.<br>
+      <ion-img src="assets/images/ispex-mount4.png"></ion-img>
+      6. Gently move the smartphone back
+      and forth to ensure the add-on is
+      firmly attached.
+      If the add-on appears to rotate or slide off, start again.   </ion-card-content>
+  </ion-card>
+
+
+
+<canvas id="canvasOutput"></canvas>
+
+
+
+</ion-content>

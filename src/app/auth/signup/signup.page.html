@@ -1,0 +1,48 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home" icon="chevron-back-outline"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">{{ "signupPage.title" | translate }}</ion-title>
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+
+
+  <ion-grid>
+    <ion-row>
+      <ion-col sizeSm="4" sizeLg="4" sizeMd="6">
+        <form (ngSubmit)="register()" [formGroup]="credentials">
+          <ion-item fill="solid" class="ion-margin-bottom">
+            <ion-input type="name" [placeholder]="'signupPage.name-placeholder' | translate" formControlName="name"><ion-icon name="person-outline"></ion-icon></ion-input>
+          </ion-item>
+        <ion-item fill="solid" class="ion-margin-bottom">
+          <ion-input type="email" [placeholder]="'signupPage.email-placeholder' | translate" formControlName="email"><ion-icon name="mail-outline"></ion-icon></ion-input>
+          <ion-note slot="error" *ngIf="(email.dirty || email.touched) && email.errors">{{ "signupPage.email-invalid" | translate }}</ion-note>
+        </ion-item>
+        <ion-item fill="solid" class="ion-margin-bottom">
+          <ion-input type="password" [placeholder]="'signupPage.password-placeholder' | translate" formControlName="password"><ion-icon name="key-outline"></ion-icon></ion-input>
+          <ion-note slot="error" *ngIf="(password.dirty || password.touched) && password.errors">{{ "signupPage.password-invalid" | translate }}</ion-note>
+        </ion-item>
+        <ion-button type="submit" expand="block" [disabled]="!credentials.valid">{{ "signupPage.create-account-button" | translate }}</ion-button>
+      </form>
+     </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col sizeSm="10" offsetSm="1" sizeLg="6" offsetLg="3" sizeMd="8" offsetMd="2" class="ion-text-center">
+        <a [routerLink]="['/login']">{{ "signupPage.have-account" | translate }}</a>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+</ion-card-content>
+</ion-card>
+
+
+</ion-content>

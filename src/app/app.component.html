@@ -1,0 +1,60 @@
+<ion-app>
+  <ion-menu side="start" contentId="main">
+    <ion-menu-toggle>
+    <ion-header color="primary">
+      <ion-toolbar>
+
+        <ion-item lines="none">
+          <ion-label routerLink="home">M O B I S</ion-label>
+          <ion-buttons>
+            <ion-button type="icon-only" (click)="closeMenu()"><ion-icon name="close-outline" color="dark"></ion-icon></ion-button>
+        </ion-buttons>
+        </ion-item>
+
+      </ion-toolbar>
+    </ion-header>
+  </ion-menu-toggle>
+    <ion-content>
+      <ion-list>
+        <ion-list-header>
+          <ion-label>{{ "menu.account" | translate }}</ion-label>
+        </ion-list-header>
+          <ion-menu-toggle>
+            <ion-item button routerLink="signup" [disabled]="user">
+              <ion-icon name="person-add-outline"></ion-icon>
+              <ion-label>{{ "menu.signup" | translate }}</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+          <ion-menu-toggle>
+            <ion-item button routerLink="login" [disabled]="user">
+              <ion-icon name="log-in-outline"></ion-icon>
+              <ion-label>{{ "menu.signin" | translate }}</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+
+          <ion-menu-toggle>
+          <ion-item button routerLink="profile" [disabled]="!user">
+            <ion-icon name="person-circle-outline"></ion-icon>
+            <ion-label>{{ "menu.profile" | translate }}</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item button (click)="logout()" [disabled]="!user">
+            <ion-icon name="log-out-outline"></ion-icon>
+            <ion-label>{{ "menu.signout" | translate }}</ion-label>
+          </ion-item>
+      </ion-menu-toggle>
+      <ion-list-header>
+        <ion-label>{{ "menu.settings" | translate }}</ion-label>
+      </ion-list-header>
+      <ion-menu-toggle>
+        <ion-item button routerLink="options">
+          <ion-icon name="settings-outline"></ion-icon>
+          <ion-label>{{ "menu.options" | translate }}</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="main"></ion-router-outlet>
+</ion-app>

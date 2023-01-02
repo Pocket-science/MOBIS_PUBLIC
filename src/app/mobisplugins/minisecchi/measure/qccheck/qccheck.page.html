@@ -1,0 +1,49 @@
+  <ion-header>
+<ion-toolbar>
+    <ion-title>Review</ion-title>
+
+   <ion-buttons slot="start">
+     <ion-back-button></ion-back-button>
+   </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+<ion-item>
+Values to be submitted:
+</ion-item>
+
+<ion-card>
+
+UID: {{this.rec_uid}}<br>
+Latitude: {{this.latitude}}<br>
+Longitude: {{this.longitude}}<br>
+Distancetowater: {{this.distancetowater}} cm<br>
+Reappear: {{this.reappear}} cm<br>
+Colourathalfdepth: {{this.colourathalfdepth}} <br>
+Colouratsurface: {{this.colouratsurface}}<br>
+pH Value: {{this.phvalue}}<br>
+QC Check<br>
+The bottom was visible: {{this.bottom_visible}}<br>
+Reached end of tape: {{this.end_of_tape}}<br>
+Estimated angle: {{this.angle_estimated}} degrees<br>
+Datetime: {{this.datetime}}<br>
+
+</ion-card>
+
+<ion-item>
+Tip: wipe the Mini-Secchi disk tape dry after use so it does not stick.
+<br>
+Thank you for submitting a new mini-Secchi disk measurement!
+</ion-item>
+
+
+ <ion-button expand="block" (click)="validate()" routerLink="/home" routerDirection="root">Finish
+
+
+ </ion-button>
+
+</ion-content>

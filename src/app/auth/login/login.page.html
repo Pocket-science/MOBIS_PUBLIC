@@ -1,0 +1,52 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home" icon="chevron-back-outline"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">{{ "loginPage.title" | translate}}</ion-title>
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col sizeSm="6" offsetSm="3" sizeLg="4" offsetLg="4" sizeMd="6" offsetMd="3"  *ngIf="showForm" class="ion-text-center">
+        <form (ngSubmit)="login()" [formGroup]="credentials">
+        <ion-item fill="solid" class="ion-margin-bottom">
+          <ion-input type="email" [placeholder]="'loginPage.email-placeholder' | translate" formControlName="email"><ion-icon name="mail-outline"></ion-icon></ion-input>
+          <ion-icon name="person-outline" slot=“end” align-self-center></ion-icon>
+          <ion-note slot="error" *ngIf="(email.dirty || email.touched) && email.errors">{{ "loginPage.email-invalid" | translate }}</ion-note>
+        </ion-item>
+        <ion-item fill="solid" class="ion-margin-bottom">
+          <ion-input type="password" [placeholder]="'loginPage.password-placeholder' | translate" formControlName="password"><ion-icon name="key-outline"></ion-icon></ion-input>
+          <ion-note slot="error" *ngIf="(password.dirty || password.touched) && password.errors">{{ "loginPage.password-invalid" | translate }}</ion-note>
+        </ion-item>
+
+        <ion-button type="submit" expand="block" [disabled]="!credentials.valid">{{ "loginPage.login-button" | translate }}</ion-button>
+     <a [routerLink]="['/resetpw']">{{ "loginPage.forgot-password" | translate }}</a>
+      </form>
+     </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="ion-text-center" sizeSm="6" offsetSm="3" sizeLg="4" offsetLg="4" sizeMd="6" offsetMd="3">
+        <ion-button type="button" (click)="toggleForm()" expand="block"><ion-icon name="person-outline"></ion-icon>{{ "loginPage.login-username" | translate }}</ion-button>
+        <ion-button type="button" (click)="anonymousLogin()" expand="block"><ion-icon name="eye-outline"></ion-icon>{{ "loginPage.login-anonymous" | translate }}</ion-button>
+        <ion-button type="button" (click)="loginWithGoogle()" expand="block" color="danger"><ion-icon name="logo-google"></ion-icon>{{ "loginPage.login-google" | translate }}</ion-button>
+        <ion-button type="button" (click)="loginWithApple()" expand="block" color="dark"><ion-icon name="logo-apple"></ion-icon>{{ "loginPage.login-apple" | translate }}</ion-button>
+        <a href="signup">{{ "loginPage.goto-signup" | translate }}</a>
+
+        <br>
+
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+</ion-card-content>
+</ion-card>
+
+</ion-content>

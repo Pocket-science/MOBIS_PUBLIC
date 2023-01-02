@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Disk reappearance</ion-title>
+
+   <ion-buttons slot="start">
+     <ion-back-button></ion-back-button>
+   </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-item>
+Wind the spindle down until the Secchi disk disappears from sight. Wind it up again until the disk re-appears. <br>
+Note that the disk should be lowered straight down rather than at an angle. Adjust the weight if needed. <br>
+Record the length of the tape from the handheld device. The distance from the device to the water surface will be automatically subtracted.
+</ion-item>
+<img src="assets/images/reappearance.png"><br>
+
+<ion-item>
+  <ion-label>Distance to re-appearance:</ion-label>
+</ion-item>
+<ion-item>
+<!-- Number type input -->
+<ion-input [(ngModel)]="reappear" type="number" inputmode="numeric" placeholder="Enter distance here"></ion-input>cm</ion-item>
+
+ <ion-button expand="block" (click)="validate()" routerLink="/ms_measure/colourathalfdepth" routerDirection="forward">
+ Go to step 3
+ </ion-button>
+
+</ion-content>

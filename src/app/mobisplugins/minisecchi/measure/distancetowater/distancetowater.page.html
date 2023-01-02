@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Distance to water</ion-title>
+
+   <ion-buttons slot="start">
+     <ion-back-button></ion-back-button>
+   </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-item>
+Wind the disk down to the water surface and record the distance from the handheld device to the water surface. Keep your arm at the same distance from the water for the remaining depth measurements.
+</ion-item>
+
+<img src="assets/images/distancetowater.png"><br>
+
+<ion-item>
+  <ion-label>Distance to water:</ion-label></ion-item>
+  <ion-item>
+ <ion-input [(ngModel)]="distancetowater" type="number" #nameCtrl="ngModel" inputmode="numeric" value="00" min="0" max="200" required="true"  placeholder="Enter distance here"></ion-input>cm</ion-item>
+
+
+
+ <ion-button expand="block"  (click)="validate()" routerLink="/ms_measure/reappear" routerDirection="forward" >
+ Go to step 2
+ </ion-button>
+
+
+
+</ion-content>

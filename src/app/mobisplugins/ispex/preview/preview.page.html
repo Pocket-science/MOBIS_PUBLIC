@@ -1,0 +1,32 @@
+
+
+
+<ion-content id="content" [fullscreen]="true">
+
+  <div *ngIf="cameraActive">
+
+
+
+
+      <ion-button (click)="stopCamera()" expand="block" id="close">
+X</ion-button>
+
+
+      <ion-button (click)="takePicture(1)" expand="block" id="grey">
+        Grey
+      </ion-button>
+      <ion-button (click)="takePicture(2)" expand="block" id="sky">
+        Sky
+      </ion-button>
+      <ion-button (click)="takePicture(3)" expand="block" id="water">
+        Water
+      </ion-button>
+
+      <ion-button (click)="takePicture(4)" expand="block" id="free">
+        Free
+      </ion-button>
+
+
+
+  </div>
+</ion-content>

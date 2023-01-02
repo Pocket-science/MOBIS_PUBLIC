@@ -1,0 +1,105 @@
+{
+  "menu": {
+    "account": "Account",
+    "signup": "Sign up",
+    "signin": "Sign in",
+    "signout": "Sign out",
+    "profile": "Profile",
+    "project": "Project",
+    "information": "Information",
+    "overview": "Overview",
+    "tutorial": "Tutorial",
+    "contribute": "Contribute",
+    "classify": "Classify",
+    "my classifications": "My Classifications",
+    "ranking": "Ranking",
+    "results": "Results",
+    "settings": "Settings",
+    "options": "Options"
+  },
+  "measure":{
+    "welcome-to-mobis": "Welcome to M O B I S",
+    "measure": "Observe",
+    "water-quality": "Water Quality",
+    "air-quality": "Air Quality",
+    "biodiversity": "Biodiversity",
+    "new-mini-secchi-observation": "New Mini Secchi Observation",
+    "new-ispex2-observation": "New iSPEX Water Observation",
+    "new-canairiopm25-observation": "New CanAir.io PM2.5 Observation",
+    "new-canairioco2-observation": "New CanAir.io CO2 Observation",
+    "new-plantnet-observation": "New Pl@ntNet Observation"
+  },
+  "homePage": {
+    "page1": {
+      "ion-card-title": "Welcome",
+      "ion-card-subtitle": "",
+      "ion-card-content": ""
+    }
+    },
+  "profilePage": {
+    "title": "profile",
+    "select avatar": "Select Avatar",
+    "name": "Name",
+    "verify email": "Verify Email",
+    "unverified email": "Unverified Email",
+    "unverified email text": "Your email address has not yet been verified. This means that you can contribute to the project, but you are not allowed to make changes to existing data or participate in discussions. During registration you should have received a verification email in your mailbox. Once you click the link and verify your email you can participate in the project without limitations. If you didn't receive the email you can request a new one by clicking the verify button. Make sure to also check your spam emails.",
+    "anonymous login": "Anonymous login",
+    "anonymous login text": "You are logged in anonymously. While you stay logged in your contributions will be registered to your current (anonymous) userId but they cannot be retrieved by you. As soon as you log out, this userId can not be reused. Your contributions will still count towards the project(s), but they are not traceable to you in any way. You can log in again anonymously to keep contributing to the project. If you however want to be able to review or edit your conbributions, and/or want to participate in the ranking and reward program you can register with email/password or login with the included authentication providers.",
+    "logged out": "You are logged out",
+    "verification-mail-sent": "Verification email sent",
+    "check-also-spam": "please also check your spam",
+    "processing-image": "Processing Image...",
+    "upload-failed": "Upload failed",
+    "problem-uploading-avatar": "There was a problem uploading your avatar."
+  },
+  "signupPage": {
+    "title": "sign up",
+    "name": "Name",
+    "password": "password",
+    "password-invalid": "Password needs to be 6 characters",
+    "email-invalid": "Email is invalid",
+    "create-account-button": "Create Account",
+    "have-account": "Already have an account?",
+    "name-placeholder": "Name",
+    "email-placeholder": "Email",
+    "password-placeholder": "Password",
+    "creating-account": "Creating account...",
+    "registration-failed": "Registration failed",
+    "please-try-again": "Please try again"
+
+  },
+  "loginPage": {
+    "title": "login",
+    "password-invalid": "Password needs to be 6 characters",
+    "email-invalid": "Email is invalid",
+    "email-placeholder": "Email",
+    "password-placeholder": "Password",
+    "login-button": "Login",
+    "login-username": "Login with Username",
+    "login-google": "Login with Google",
+    "login-apple": "Login with Apple",
+    "login-anonymous": "Anonymous login",
+    "goto-signup": "Or click here to Register",
+    "forgot-password": "Forgot your password?",
+    "logging-in-with-email": "Logging in with email...",
+    "logging-in-with-apple": "Logging in with Apple...",
+    "logging-in-with-google": "Logging in with Google...",
+    "logging-in-anonymously": "Logging in anonymously...",
+    "login-failed": "Login failed",
+    "please-try-again": "Please try again"
+  },
+  "resetpwPage": {
+    "title": "reset your password",
+    "email-placeholder": "Email",
+    "send-email-button": "Send reset email",
+    "email-invalid": "Email is invalid",
+    "password-reset-email-sent": "Password reset email sent"
+  },
+  "optionsPage": {
+    "title": "Options",
+    "ion-card-title": "Settings",
+    "general-settings-label": "General settings",
+    "language-label": "Language",
+    "languageSelectPlaceholder": "Select language"
+  }
+}

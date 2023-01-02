@@ -1,0 +1,8 @@
+{
+  "name": "mobisapp",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>{{ "resetpwPage.title" | translate }}</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col sizeSm="10" offsetSm="1" sizeLg="6" offsetLg="3" sizeMd="8" offsetMd="2">
+        <form (ngSubmit)="resetPw()" [formGroup]="frmPasswordReset">
+          <ion-item fill="solid" class="ion-margin-bottom">
+            <ion-input type="email" [placeholder]="'resetpwPage.email-placeholder' | translate" formControlName="email"></ion-input>
+            <ion-note slot="error" *ngIf="(email.dirty || email.touched) && email.errors">{{ "resetpwPage.email-invalid" | translate }}</ion-note>
+          </ion-item>
+          <ion-button type="submit" expand="block" [disabled]="!frmPasswordReset.valid">{{ "resetpwPage.send-email-button" | translate }}</ion-button>
+        </form>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+</ion-content>
