@@ -9,7 +9,7 @@ const config: CapacitorConfig = {
     // eslint-disable-next-line @typescript-eslint/naming-convention
     GoogleAuth: {
       scopes: ['profile', 'email'],
-      androidClientId: '778522712103-tqkc468qermr7hvbqsmm2p2ueglcmjsi.apps.googleusercontent.com',
+      androidClientId: '778522712103-put key here.apps.googleusercontent.com',
       forceCodeForRefreshToken: true,
     }
   }

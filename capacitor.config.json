@@ -8,7 +8,7 @@
   "plugins": {
     "GoogleAuth": {
       "scopes": ["profile", "email"],
-      "clientId": "778522712103-tqkc468qermr7hvbqsmm2p2ueglcmjsi.apps.googleusercontent.com",
+      "clientId": "your key here.apps.googleusercontent.com",
       "forceCodeForRefreshToken" : true
     }
   }
