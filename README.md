@@ -29,6 +29,8 @@ This readme acts as a reference for the mobis  software and / or documentation. 
 ## Audience
 Scientists,  (app) developers,  project partners, people who are lookikng for low cost sensor integration solutions.
 
+## Documentation
+More in depth documentation is available on ZENODO: https://zenodo.org/record/7615472#.Y-JidC8w2gQ
 
 ## Generic
 Provided functionalities in R 1.0: 
