@@ -1,85 +1,59 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>New Canair.io  PM2.5 observation</ion-title>
+<ion-header class="ion-no-border">
+  <ion-toolbar color="black">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" icon="chevron-back-outline" text=""></ion-back-button>
 
-   <ion-buttons slot="start">
-     <ion-back-button></ion-back-button>
-   </ion-buttons>
-
+    </ion-buttons>
+    <ion-title>CANAIR.IO PM2.5</ion-title>
   </ion-toolbar>
-
 </ion-header>
 
 <ion-content>
-
-
-
-
-
-<ion-item>
-    <ion-label>
-Canairio output
-</ion-label>
+  <ion-item>
+    <ion-label> Canairio output </ion-label>
   </ion-item>
-<ion-item>
-   <ion-label primary>{{txtpm25}} </ion-label>
+  <ion-item>
+    <ion-label primary>{{txtpm25}} </ion-label>
+  </ion-item>
 
-</ion-item>
+  <ion-item>
+    <ion-label primary>PM 2.5: {{PM25}} ({{PM25Interpret}}) </ion-label>
+  </ion-item>
 
-<ion-item>
-   <ion-label primary>PM 2.5: {{PM25}} ({{PM25Interpret}}) </ion-label>
+  <ion-item>
+    <ion-label primary>Temperature: {{TEMP}} C</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-label primary>Humidity: {{HUMID }} % </ion-label>
+  </ion-item>
 
-</ion-item>
+  <ion-item>
+    <ion-label primary>PAX: {{PAX}} </ion-label>
+  </ion-item>
 
+  <ion-item>
+    <ion-label primary>Lat: {{latitude}} </ion-label>
+  </ion-item>
 
+  <ion-item>
+    <ion-label primary>Lon: {{longitude}} </ion-label>
+  </ion-item>
 
-<ion-item>
-   <ion-label primary>Temperature: {{TEMP}} C</ion-label>
+  <ion-item>
+    <ion-label primary>Alt: {{altitude}} </ion-label>
+  </ion-item>
 
-</ion-item>
-<ion-item>
-   <ion-label primary>Humidity: {{HUMID }} % </ion-label>
+  <ion-item>
+    <ion-button (click)="startLogging()" [disabled]="isLogging">Start logging</ion-button>
+    <ion-button (click)="stopLogging()" [disabled]="!isLogging"> Stop logging</ion-button>
+  </ion-item>
 
-</ion-item>
+  <ion-item>
+    <ion-label>Log Interval:</ion-label>
+    <ion-input>{{logInterval}}</ion-input>
+  </ion-item>
 
-<ion-item>
-   <ion-label primary>PAX: {{PAX}} </ion-label>
-
-</ion-item>
-
-
-
-<ion-item>
-   <ion-label primary>Lat: {{latitude}} </ion-label>
-
-</ion-item>
-
-<ion-item>
-
-   <ion-label primary>Lon: {{longitude}} </ion-label>
-</ion-item>
-
-<ion-item>
-
-   <ion-label primary>Alt: {{altitude}} </ion-label>
-</ion-item>
-
-
-
-
-
-<ion-item>
-<ion-button (click) ="startLogging()">Start logging</ion-button>
-<ion-button (click) ="stopLogging()"> Stop logging</ion-button>
-</ion-item>
-
-<ion-item>
-<ion-input>Log Interval:{{logInterval}}</ion-input>
-</ion-item>
-
-<ion-item>
-<ion-label>Log status:{{lblLogstatus}}</ion-label>
-</ion-item>
-
-
+  <ion-item>
+    <ion-label>Log status:{{lblLogstatus}}</ion-label>
+  </ion-item>
 </ion-content>

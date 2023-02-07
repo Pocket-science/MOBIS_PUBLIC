@@ -4,6 +4,9 @@ import { Guid } from "guid-typescript";
 import * as Parse from 'parse';
 import { ENV } from '../../../../app.constant';
 import { Geolocation } from '@capacitor/geolocation';
+import { AuthService } from '../../../../services/auth.service';
+import { Auth, user } from '@angular/fire/auth';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-qccheck',
@@ -15,7 +18,8 @@ export class QccheckPage implements OnInit {
   private parseAppId: string = ENV.parseAppId;
   private parseServerUrl: string = ENV.parseServerUrl;
   private parseJSKey: string = ENV.parseJSKey;
-
+  user = null;
+  language= '';
   public swversion_number: string;
   public swversion_code: number;
   public latitude: number;
@@ -39,8 +43,14 @@ export class QccheckPage implements OnInit {
 
   newSecchi = { uid: null, swversion_number: null, swversion_code: null, latitude: null, longitude: null, distancetowater: null, reappear: null, colourathalfdepth: null, colourathalfdepthimage: null, colouratsurface: null, colouratsurfaceimage: null, datetimerecorded: null, datetime_ux: null, bottom_visible: null, end_of_tape: null, phvalue: null, angle_estimated: null, secchi_depth: null };
 
-  constructor(private storage: Storage) {
-
+  constructor(private storage: Storage,     private translateService: TranslateService,
+    private authService: AuthService,
+    private afAuth: Auth) {
+      user(this.afAuth).subscribe((response) => {
+        //fill the user to verify if someone is logged in
+        this.user = response;
+        console.log (this.user.uid)
+      });
     this.rec_uid = Guid.raw(); // make it a string
 
   }
@@ -235,7 +245,9 @@ export class QccheckPage implements OnInit {
     secchi_store.set('secchi_depth', this.secchi_depth);
     secchi_store.set('datetime_ux', this.datetime_ux.toString());
     secchi_store.set('datetimerecorded', this.datetime.toISOString());
-
+    secchi_store.set('user_uid', this.user.uid);
+    secchi_store.set('name', this.user.displayName);
+    secchi_store.set('email', this.user.email);
 
 
 

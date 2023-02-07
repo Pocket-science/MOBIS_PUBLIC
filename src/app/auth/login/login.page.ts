@@ -82,7 +82,7 @@ export class LoginPage implements OnInit {
     await loading.present();
     this.authService
       .loginWithGoogle()
-      .then(() => this.router.navigate(['/profile']))
+      .then(() => this.router.navigate(['/home']))
       .catch((e) => console.log(e.message));
     await loading.dismiss();
   }
@@ -96,7 +96,7 @@ export class LoginPage implements OnInit {
     await loading.present();
     this.authService
       .loginWithApple()
-      .then(() => this.router.navigate(['/profile']))
+      .then(() => this.router.navigate(['/home']))
       .catch((e) => console.log(e.message));
     await loading.dismiss();
   }
@@ -110,7 +110,7 @@ export class LoginPage implements OnInit {
     await loading.present();
     this.authService
       .anonymousLogin()
-      .then(() => this.router.navigate(['/profile']))
+      .then(() => this.router.navigate(['/home']))
       .catch((e) => console.log(e.message));
     await loading.dismiss();
   }

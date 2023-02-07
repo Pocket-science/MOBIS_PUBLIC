@@ -1,13 +1,13 @@
 <ion-app>
-  <ion-menu side="start" contentId="main">
+  <ion-menu side="end" contentId="main">
     <ion-menu-toggle>
     <ion-header color="primary">
       <ion-toolbar>
-
         <ion-item lines="none">
-          <ion-label routerLink="home">M O B I S</ion-label>
+        <ion-title routerLink="home" class="ion-no-padding">M O B I S</ion-title>
+         <!-- <ion-label routerLink="home">M O B I S</ion-label> -->
           <ion-buttons>
-            <ion-button type="icon-only" (click)="closeMenu()"><ion-icon name="close-outline" color="dark"></ion-icon></ion-button>
+            <ion-icon name="close-outline" (click)="closeMenu()" size="large" slot="start"></ion-icon>
         </ion-buttons>
         </ion-item>
 
@@ -15,25 +15,25 @@
     </ion-header>
   </ion-menu-toggle>
     <ion-content>
-      <ion-list>
+      <ion-list lines="none" class="ion-no-padding">
         <ion-list-header>
           <ion-label>{{ "menu.account" | translate }}</ion-label>
         </ion-list-header>
           <ion-menu-toggle>
-            <ion-item button routerLink="signup" [disabled]="user">
+            <ion-item button routerLink="/signup" [disabled]="user">
               <ion-icon name="person-add-outline"></ion-icon>
               <ion-label>{{ "menu.signup" | translate }}</ion-label>
             </ion-item>
           </ion-menu-toggle>
           <ion-menu-toggle>
-            <ion-item button routerLink="login" [disabled]="user">
+            <ion-item button routerLink="/login" [disabled]="user">
               <ion-icon name="log-in-outline"></ion-icon>
               <ion-label>{{ "menu.signin" | translate }}</ion-label>
             </ion-item>
           </ion-menu-toggle>
 
           <ion-menu-toggle>
-          <ion-item button routerLink="profile" [disabled]="!user">
+          <ion-item button routerLink="/profile" [disabled]="!user">
             <ion-icon name="person-circle-outline"></ion-icon>
             <ion-label>{{ "menu.profile" | translate }}</ion-label>
           </ion-item>
@@ -48,7 +48,7 @@
         <ion-label>{{ "menu.settings" | translate }}</ion-label>
       </ion-list-header>
       <ion-menu-toggle>
-        <ion-item button routerLink="options">
+        <ion-item button routerLink="/options">
           <ion-icon name="settings-outline"></ion-icon>
           <ion-label>{{ "menu.options" | translate }}</ion-label>
         </ion-item>

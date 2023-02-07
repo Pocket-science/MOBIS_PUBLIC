@@ -7,6 +7,10 @@ const routes: Routes = [
   {
     path: '',
     component: PlantnetPage
+  },
+  {
+    path: 'classify',
+    loadChildren: () => import('./classify/classify.module').then( m => m.ClassifyPageModule)
   }
 ];
 

@@ -1,56 +1,84 @@
-    <ion-header>
-      <ion-toolbar color="primary">
-        <ion-title>M O B I S</ion-title>
+<ion-header>
+  <ion-toolbar color="black">
+    <ion-title mode="ios">M O B I S</ion-title>
 
-        <ion-buttons slot="start">
-          <ion-menu-button slot="start"></ion-menu-button>
-        </ion-buttons>
-      </ion-toolbar>
-    </ion-header>
+    <ion-buttons slot="end">
+      <ion-menu-button slot="end"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
 
+<ion-content>
+  <ion-card>
+    <ion-card-header>{{ "measure.welcome-to-mobis" | translate }}</ion-card-header>
+    <ion-card-content class="ion-no-padding">
+      <ion-list lines="none" class="ion-no-padding">
+        <ion-list-header>{{ "menu.account" | translate }}</ion-list-header>
 
+        <ion-item button routerLink="/login" [disabled]="user">
+          <ion-icon name="person-add-outline"></ion-icon>
+          <ion-label>{{ "menu.login-register" | translate }}</ion-label>
+        </ion-item>
 
-<ion-content class="ion-padding">
+        <ion-item button routerLink="/profile" [disabled]="!user">
+          <ion-icon name="person-circle-outline"></ion-icon>
+          <ion-label>{{ "menu.profile" | translate }}</ion-label>
+        </ion-item>
 
-<ion-card>
-  <ion-card-title>{{ "measure.welcome-to-mobis" | translate }}</ion-card-title>
-  <ion-card-header>{{ "measure.measure" | translate }}</ion-card-header>
-  <ion-card-content>
-    <ion-list>
-      <ion-list-header>
-        {{ "measure.water-quality" | translate }}
-      </ion-list-header>
-      <ion-button shape="round"  expand="block" routerLink="/minisecchi"  strong="true" routerDirection="forward" >
-        {{ "measure.new-mini-secchi-observation" | translate }}       </ion-button>
+        <ion-item button (click)="logout()" [disabled]="!user">
+          <ion-icon name="log-out-outline"></ion-icon>
+          <ion-label>{{ "menu.signout" | translate }}</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+    </ion-card>
 
-       <ion-button shape="round"  expand="block" routerLink="/ispex" routerDirection="forward" strong="true" routerDirection="forward" >
-        {{ "measure.new-ispex2-observation" | translate }}       </ion-button>
+  <ion-card>
+    <ion-card-header>{{ "measure.measure" | translate }}</ion-card-header>
+    <ion-card-content class="ion-no-padding">
+      <ion-list lines="none" class="ion-no-padding">
 
-      <ion-list-header>
-        {{ "measure.air-quality" | translate }}
-      </ion-list-header>
-      <ion-button shape="round"  expand="block" routerLink="/canairiopm25" routerDirection="forward" strong="true" routerDirection="forward" >
-        {{ "measure.new-canairiopm25-observation" | translate }}
-         </ion-button>
+        <ion-list-header>
+          {{ "measure.environment" | translate }}
+        </ion-list-header>
+   
+    
+        <ion-item button routerLink="/envpic" [disabled]="!user">
+          <ion-label>{{ "measure.envpic" | translate }}</ion-label>
+        </ion-item>
 
-         <ion-button shape="round"  expand="block" routerLink="/canairioco2" routerDirection="forward" strong="true" routerDirection="forward" >
-          {{ "measure.new-canairioco2-observation" | translate }}
-           </ion-button>
+        <ion-item button routerLink="/ispex" [disabled]="!user">
+          <ion-label>{{ "measure.ispex2-observation" | translate }}</ion-label>
+        </ion-item>
+   
+        <ion-list-header>
+          {{ "measure.water-quality" | translate }}
+        </ion-list-header>
+        <ion-item button routerLink="/minisecchi" [disabled]="!user">
+          <ion-label> {{ "measure.mini-secchi-observation" | translate }}</ion-label>
+        </ion-item>
+
   
 
-      <ion-list-header>
-        {{ "measure.biodiversity" | translate }}
-      </ion-list-header>
-      <ion-button shape="round"  expand="block" routerLink="/plantnet" routerDirection="forward" strong="true" routerDirection="forward" >
-        {{ "measure.new-plantnet-observation" | translate }}
-         </ion-button>
-    </ion-list>
+        <ion-list-header>
+          {{ "measure.air-quality" | translate }}
+        </ion-list-header>
+        <ion-item button routerLink="/canairiopm25" [disabled]="!user">
+          <ion-label>  {{ "measure.canairiopm2.5-observation" | translate }}</ion-label>
+        </ion-item>
 
-  </ion-card-content>
-</ion-card>
+        <ion-item button routerLink="/canairioco2" [disabled]="!user">
+          <ion-label>{{ "measure.canairioco2-observation" | translate }}</ion-label>
+        </ion-item>
 
+        <ion-list-header>
+          {{ "measure.biodiversity" | translate }}
+        </ion-list-header>
 
-
-
-
+        <ion-item button routerLink="/plantnet" [disabled]="!user">
+          <ion-label> {{ "measure.plantnet-observation" | translate }}</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

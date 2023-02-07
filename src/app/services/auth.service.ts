@@ -63,13 +63,10 @@ export class AuthService {
   async sha256(message) {
     // encode as UTF-8
     const msgBuffer = new TextEncoder().encode(message);
-
     // hash the message
     const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
-
     // convert ArrayBuffer to Array
     const hashArray = Array.from(new Uint8Array(hashBuffer));
-
     // convert bytes to hex string
     const hashHex = hashArray
       .map((b) => b.toString(16).padStart(2, '0'))
@@ -84,7 +81,7 @@ export class AuthService {
       this.platform.ready().then(() => {
         GoogleAuth.initialize({
           clientId:
-            '553589883639-2h19rvk5ki52j7h0ptjmmlh5keetm3kj.apps.googleusercontent.com', //Test new project MOBIS AUTH WEB
+          '1090658128897-uqpp3egk2v7d0errt8crl220e6tltblq.apps.googleusercontent.com',
           scopes: ['profile', 'email'],
           grantOfflineAccess: false,
         });
@@ -103,7 +100,6 @@ export class AuthService {
       );
       await this.sendVerificationMail();
       await this.updateUserName(name);
-      //      this.updateUserName(name);
       return loggedInUser;
     } catch (e) {
       return null;
@@ -127,6 +123,11 @@ export class AuthService {
   async updateUserName(name: string) {
     await updateProfile(this.afAuth.currentUser, { displayName: name });
   }
+
+  async updatePhotoURL(photoURL: string) {
+    await updateProfile(this.afAuth.currentUser, { photoURL });
+  }
+
 
   async sendPasswordResetEmail(email) {
     console.log('resetting password for email', email);
@@ -212,9 +213,7 @@ export class AuthService {
     console.log('Apple Native login');
     let loggedInUser = null;
     const nonce = this.nonceService.generateNonce();
-
     const hashedNonceHex = await this.sha256(nonce); // see next function
-
     const options: SignInWithAppleOptions = {
       clientId: 'nl.ddq.blackholefinder',
       redirectURI: 'https://www.ddq.nl',
@@ -222,11 +221,9 @@ export class AuthService {
       state: '123456',
       nonce: hashedNonceHex,
     };
-
     const appleUser: SignInWithAppleResponse = await SignInWithApple.authorize(options);
     const provider = new OAuthProvider('apple.com');
     const credential = provider.credential({idToken: appleUser.response.identityToken, rawNonce: nonce});
-
     await signInWithCredential(this.afAuth, credential).then(
       (signedInUser) => {
         loggedInUser = signedInUser;
@@ -237,5 +234,9 @@ export class AuthService {
 
   logout() {
     return signOut(this.afAuth);
+  }
+
+  deleteAccount(){
+    return this.afAuth.currentUser.delete();
   }
 }

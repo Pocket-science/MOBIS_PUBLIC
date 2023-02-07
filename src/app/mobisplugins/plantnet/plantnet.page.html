@@ -1,15 +1,32 @@
-<ion-header>
-  <ion-toolbar color="primary">
-    <ion-title>New PlantNet observation</ion-title>
-
+<ion-header [translucent]="true">
+  <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-menu-button slot="start"></ion-menu-button>
-      <ion-back-button></ion-back-button>
-
+      <ion-back-button defaultHref="home" icon="chevron-back-outline"></ion-back-button>
     </ion-buttons>
+    <ion-title>
+Take a picture
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content [fullscreen]="false">
+  <ion-card>
+Welcome to the Plantnet API
+</ion-card>
 
+  <div *ngIf="image">
+    <img [src]="image" alt="" srcset="">
+  </div>
+
+  <div *ngIf="uploadSuccess">
+    <ion-button expand="block"  routerLink="classify" routerDirection="forward">
+      Lets classify this image!
+    </ion-button>
+</div>
+
+
+
+  <ion-button (click)="openCamera()" color="primary" expand="block" fill="solid" size="default">
+    Take a picture
+  </ion-button>
 </ion-content>

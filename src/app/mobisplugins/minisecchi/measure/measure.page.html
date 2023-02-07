@@ -1,40 +1,39 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Safety first</ion-title>
-  
-   <ion-buttons slot="start">
-     <ion-back-button></ion-back-button>
-   </ion-buttons>
-
+<ion-header class="ion-no-border">
+  <ion-toolbar color="black">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" icon="chevron-back-outline" text=""></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Safety first</ion-title>
   </ion-toolbar>
-
 </ion-header>
 
 <ion-content>
-
   <ion-item>
-    <ion-label>  <ion-icon name="warning-outline"></ion-icon>
-Safety first</ion-label>
+    <ion-label>
+      <ion-icon name="warning-outline" color="danger"></ion-icon> Safety first</ion-label
+    >
   </ion-item>
-<ion-item>
+  <ion-item>
+    Work from a stable platform, wear a life vest and make sure someone knows
+    where you are. Only upload photos if you can do so without risking your
+    safety and your phone. Find a spot where you can look into the water, away
+    from sun reflections. Record Secchi depth, water colour and pH without
+    sunglasses.
+    <br />
+    If you have pH paper, clip a new section into the provided clip and attach
+    it to the disk.
+  </ion-item>
 
+  <br />
+  <ion-item>
+    <img src="assets/images/attachph.png" />
+  </ion-item>
 
-Work from a stable platform, wear a life vest and make sure someone knows where you are. Only upload photos if you can do so without risking your safety and your phone.
-Find a spot where you can look into the water, away from sun reflections. Record Secchi depth, water colour and pH without sunglasses.
-<br>
-If you have pH paper, clip a new section into the provided clip and attach it to the disk.
-
-</ion-item>
-
-<br>
-<ion-item>
-<img src="assets/images/attachph.png">
-</ion-item>
-
-
-
- <ion-button expand="block" routerLink="distancetowater" routerDirection="forward">
-  Go to step 1
-   </ion-button>
-
+  <ion-button
+    expand="block"
+    routerLink="distancetowater"
+    routerDirection="forward"
+  >
+    Go to step 1
+  </ion-button>
 </ion-content>

@@ -6,6 +6,7 @@ import { user, Auth } from '@angular/fire/auth';
 import { AvatarService } from '../../services/avatar.service';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import { TranslateService } from '@ngx-translate/core';
+import { WeatherService } from 'src/app/services/weather.service';
 
 @Component({
   selector: 'app-profile',
@@ -30,24 +31,15 @@ export class ProfilePage implements OnInit {
     private loadingController: LoadingController,
     private alertController: AlertController,
     private afAuth: Auth,
-    private translateService: TranslateService
+    private translateService: TranslateService,
+    private weatherService: WeatherService
   ) {
-    // not the nicest way, sort of duplicate to have a URL in the profile variable and also check later the user variable
-    this.avatarService.getUserProfile().subscribe((data) => {
-      if (data) {
-        this.profile = data;
-        if (this.profile.imageUrl !== null) {
-          this.photoURL = this.profile.imageUrl;
-        }
-      }
-      //console.log('data' , data);
-    });
 
     user(this.afAuth).subscribe((response) => {
       //fill the user to verify if someone is logged in
       this.user = response;
       if (response !== null) {
-        console.log(response);
+        //console.log(response);
         this.displayName = response.displayName;
         this.email = response.email;
         this.photoURL = response.photoURL;
@@ -63,6 +55,12 @@ export class ProfilePage implements OnInit {
     });
   }
   ngOnInit(): void {}
+
+  deleteAvatar(){
+    this.avatarService.removeImage(); //remove image from storage
+    this.photoURL = null; //remove image from profile page
+    this.authService.updatePhotoURL('');  //remove profile url from profile
+  }
 
   editDisplayNameField() {
     this.editDisplayName = true;
@@ -93,6 +91,16 @@ export class ProfilePage implements OnInit {
   async logout() {
     await this.authService.logout();
     this.router.navigateByUrl('/home', { replaceUrl: true });
+  }
+  //delete user in firebase project, not actual google profile
+  deleteAccount(){
+    //todo: show pop up with question if user really wants to delete his account if clicked yes, delete account
+    this.authService.deleteAccount();
+    this.router.navigateByUrl('/home', { replaceUrl: true });
+  }
+
+  getWeather() {
+    this.weatherService.showCurrentWeather();
   }
 
   async changeImage() {

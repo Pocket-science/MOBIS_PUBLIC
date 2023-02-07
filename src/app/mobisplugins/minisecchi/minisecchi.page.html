@@ -1,33 +1,61 @@
 <ion-header>
-  <ion-toolbar color="primary">
-    <ion-title>New Mini Secchi observation</ion-title>
+  <ion-toolbar color="black">
+    <ion-title>Mini Secchi</ion-title>
 
     <ion-buttons slot="start">
-      <ion-menu-button slot="start"></ion-menu-button>
-      <ion-back-button></ion-back-button>
-
+      <ion-back-button defaultHref="/" icon="chevron-back-outline" text=""></ion-back-button>
     </ion-buttons>
+    <ion-title>Mini Secchi</ion-title>
   </ion-toolbar>
 </ion-header>
+
 <ion-content>
+  <div class="ion-text-center">
+      <img src="assets/images/secchidisk.png">
+  </div>
 
-<ion-item>
-  <img src="assets/images/secchidisk.png"><br>
-  </ion-item>
-  
-   <ion-button shape="round"  expand="block" routerLink="/ms_measure"  strong="true" routerDirection="forward" color="white" style="background-image: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(86,143,150) 25%,   rgba(123,166,84) 35%, rgba(149,182,69) 50%, rgba(173,181,95) 70%, rgba(161,77,4) 100%)" >
-     New observation
-   </ion-button>
-  
-   <ion-button shape="round" color="white" expand="block" routerLink="/ms_instructions"  strong="true" routerDirection="forward" color="white" style="background-image: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(86,143,150) 25%,   rgba(123,166,84) 35%, rgba(149,182,69) 50%, rgba(173,181,95) 70%, rgba(161,77,4) 100%)" >
-     Instructions
-   </ion-button>
-  
-  
-  
+  <ion-button
+    shape="round"
+    expand="block"
+    routerLink="/ms_measure"
+    strong="true"
+    routerDirection="forward"
+    color="white"
+    style="
+      background-image: linear-gradient(
+        90deg,
+        rgba(2, 0, 36, 1) 0%,
+        rgba(86, 143, 150) 25%,
+        rgba(123, 166, 84) 35%,
+        rgba(149, 182, 69) 50%,
+        rgba(173, 181, 95) 70%,
+        rgba(161, 77, 4) 100%
+      );
+    "
+  >
+    New observation
+  </ion-button>
 
-  
-  
-  
-  </ion-content>
-  
+  <ion-button
+    shape="round"
+    color="white"
+    expand="block"
+    routerLink="/ms_instructions"
+    strong="true"
+    routerDirection="forward"
+    color="white"
+    style="
+      background-image: linear-gradient(
+        90deg,
+        rgba(2, 0, 36, 1) 0%,
+        rgba(86, 143, 150) 25%,
+        rgba(123, 166, 84) 35%,
+        rgba(149, 182, 69) 50%,
+        rgba(173, 181, 95) 70%,
+        rgba(161, 77, 4) 100%
+      );
+    "
+  >
+    Instructions
+  </ion-button>
+</ion-content>

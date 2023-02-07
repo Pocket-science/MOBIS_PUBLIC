@@ -1,7 +1,7 @@
 <ion-header class="ion-no-border">
-  <ion-toolbar color="primary">
+  <ion-toolbar color="black">
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="home" icon="chevron-back-outline"></ion-back-button>
+      <ion-back-button defaultHref="/" icon="chevron-back-outline" text=""></ion-back-button>
     </ion-buttons>
     <ion-title class="ion-text-center">{{ "profilePage.title" | translate }}</ion-title>
     <ion-buttons slot="end">
@@ -17,6 +17,7 @@
 
   <ion-grid>
     <ion-row>
+      <ion-col>
       <div class="preview">
         <ion-avatar (click)="changeImage()">
           <img
@@ -31,6 +32,12 @@
           </ng-template>
         </ion-avatar>
       </div>
+    </ion-col>
+    <ion-col>
+      <ion-button *ngIf="this.photoURL !== null" (click)="deleteAvatar()">Delete Avatar</ion-button>
+      <ion-button (click)="getWeather()" size="small">Get Weather</ion-button>
+    </ion-col>
+
     </ion-row>
   </ion-grid>
   <ion-grid *ngIf="!isAnonymous && user !== null">
@@ -100,11 +107,14 @@
       >{{ "profilePage.anonymous login text" | translate }}
       </ion-card-content>
   </ion-card>
+  <ion-button (click)="logout()">{{ "profilePage.logout-button" | translate }}</ion-button>
+  <ion-button *ngIf="this.user !== null" (click)="deleteAccount()" color="danger"><ion-icon name="alert-circle-outline"></ion-icon>{{ "profilePage.delete-profile-button" | translate }}</ion-button>
+
 </ion-content>
 
 <ion-content *ngIf="user === null">
   <ion-card>
     <ion-card-header>{{ "profilePage.logged out" | translate }}</ion-card-header>
-    <ion-card-content>Please <a routerLink="['/login']">login</a> to view your profile</ion-card-content>
+    <ion-card-content>Please <a routerLink="/login">login</a> to view your profile</ion-card-content>
   </ion-card>
 </ion-content>

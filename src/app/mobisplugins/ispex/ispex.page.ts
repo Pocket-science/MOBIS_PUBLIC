@@ -1,75 +1,100 @@
-import { Component, OnInit, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
+/* eslint-disable @typescript-eslint/naming-convention */
+import * as Parse from 'parse';
+import { ENV } from '../../app.constant';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { PreviewPage } from './preview/preview.page';
- 
-declare var cv: any; 
+import { TranslateService } from '@ngx-translate/core';
+import { AuthService } from '../../services/auth.service';
+import { Auth, user } from '@angular/fire/auth';
+import { Storage } from '@ionic/storage-angular';
+import { Router } from '@angular/router';
+
+Parse.initialize(ENV.parseAppId, ENV.parseJSKey);
+(Parse as any).serverURL = ENV.parseServerUrl; // use your server url
+
+let uploadSuccess = false;
 
 @Component({
   selector: 'app-ispex',
   templateUrl: './ispex.page.html',
   styleUrls: ['./ispex.page.scss'],
 })
+export class IspexPage implements OnInit {
+  uploadSuccess = false; // Add this line
+  image = '';
+  user = null;
+  language = '';
 
-
-export class IspexPage implements AfterViewInit {
-
-  @ViewChild('imageCanvas', { static: false }) canvasEl : ElementRef;
-
-  @ViewChild('image', { static: false }) imageEl : ElementRef;
-
-  image = null;
-  constructor(private modal: ModalController) {}
-  
-  ngAfterViewInit() {
-
-
-//     this._CANVAS       = this.canvasEl.nativeElement;
-// this._IMAGE       = this.imageEl.nativeElement;
-
-console.log ("ngAfterViewInit");
-
-
+  constructor(
+    private modal: ModalController,
+    private translateService: TranslateService,
+    private authService: AuthService,
+    private afAuth: Auth,
+    private storage: Storage,
+    private router: Router
+  ) {
+    user(this.afAuth).subscribe((response) => {
+      //fill the user to verify if someone is logged in
+      this.user = response;
+      console.log(this.user.uid);
+    });
   }
 
+  ngOnInit() {}
 
   async openCamera() {
     const modal = await this.modal.create({
       component: PreviewPage,
       cssClass: 'fullscreen',
-      animated: true
+      animated: true,
     });
 
     modal.onDidDismiss().then((data) => {
-        if (data !== null) {
-            this.image = data.data;
+      if (data !== null) {
+        this.image = data.data;
 
+        this.uploadSuccess = true;
+        // create parse class
 
-   let imgElement = document.getElementById('img');
-let src = cv.imread(imgElement);
-let dst = new cv.Mat();
-let dsize = new cv.Size(src.rows, src.cols);
-let center = new cv.Point(src.cols / 2, src.rows / 2);
-let M = cv.getRotationMatrix2D(center, -90, 1);
-cv.warpAffine(src, dst, M, dsize, cv.INTER_LINEAR, cv.BORDER_CONSTANT, new cv.Scalar());
-cv.imshow('canvasOutput', dst);
-src.delete(); dst.delete(); M.delete();
+        const myspex_data_store = Parse.Object.extend('myspex_data');
 
+        // create new instance of parse class
 
-  cv.imshow('canvasOutput', dst);
-    src.delete(); dst.delete(); 
+        const myspex_data = new myspex_data_store();
 
+        // set value for parse clas
 
+        const file = new Parse.File('image.jpg', { base64: this.image });
+        file.save().then(
+          (file) => {
+            console.log(file);
+          },
+          (error) => {
+            console.log(error);
+          }
+        );
 
+        myspex_data.set('user_uid', this.user.uid);
+        myspex_data.set('name', this.user.displayName);
+        myspex_data.set('email', this.user.email);
+        myspex_data.set('image', file);
 
-        }
+        myspex_data.save().then(
+          (result: any) => {
+            console.log(result);
+          },
+          (error: any) => {
+            console.log(error);
+          }
+        );
+      } else {
+        console.log('no data');
+      }
     });
 
     return await modal.present();
   }
 
-
-
-
-
-
+  // navigate to the classify page
 }
