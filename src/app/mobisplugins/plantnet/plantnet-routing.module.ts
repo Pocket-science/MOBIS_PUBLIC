@@ -11,7 +11,12 @@ const routes: Routes = [
   {
     path: 'classify',
     loadChildren: () => import('./classify/classify.module').then( m => m.ClassifyPageModule)
-  }
+  },
+  {
+    path: 'plantnet',
+    loadChildren: () => import('./plantnet.module').then( m => m.PlantnetPageModule)
+  },
+
 ];
 
 @NgModule({

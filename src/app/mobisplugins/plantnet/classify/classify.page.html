@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Classify your image</ion-title>
+    <ion-title>Image classification</ion-title>
     <ion-buttons slot="start">
       <ion-back-button defaultHref="home" icon="chevron-back-outline"></ion-back-button>
     </ion-buttons>
@@ -20,36 +20,14 @@
 
 <ion-content>
   <ion-item>
-    <ion-label>Choose a class</ion-label>
+    Best match: 
 
-
-
-  <ion-select>
-    <ion-select-option value="leaf">
-  Leaf
-    </ion-select-option>
-    <ion-select-option value="flower">
-  
-Flower
-    </ion-select-option>
-    <ion-select-option value="fruit">
-Fruit
-    </ion-select-option>
-
-  <ion-select-option value="bark">
-Bark
-  </ion-select-option>
-<ion-select-option value="auto">
-Automatic
-</ion-select-option>
-
-
-
-
-
-
-  </ion-select>
+    <ion-label>
+      {{result}}
+    </ion-label>
 </ion-item>
+
+<ion-button expand="block" (click)="submit_image_with_classification()">Submit</ion-button>
 
 
 </ion-content>

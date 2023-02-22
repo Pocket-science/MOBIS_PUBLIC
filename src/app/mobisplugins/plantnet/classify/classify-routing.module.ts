@@ -8,6 +8,8 @@ const routes: Routes = [
     path: '',
     component: ClassifyPage
   }
+  
+
 ];
 
 @NgModule({
