@@ -32,6 +32,32 @@ Scientists,  (app) developers,  project partners, people who are lookikng for lo
 ## Documentation
 More in depth documentation is available on ZENODO: https://zenodo.org/record/7615472#.Y-JidC8w2gQ
 
+## Installation and setup
+### Prerequisites
+- Node.js
+- Ionic / capactior
+
+- Git
+- Xcode (for iOS)
+- Android Studio (for Android)
+
+A Parse server (for example the one provided by Pocket Science, DIY or Back4App) is required for the app to work.
+A Firebase account for login and push notifications is required.
+
+### Installation
+
+Rename the provided .app. constant example to app.copnstnt and fill in the required fields. 
+
+
+1. Clone the repository
+2. Install the dependencies 
+	npm install
+3. Run the app
+
+
+
+
+
 ## Generic
 Provided functionalities in R 1.0: 
 User login (Apple/Google/Email)

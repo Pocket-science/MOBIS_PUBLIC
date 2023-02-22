@@ -21,7 +21,7 @@ export class PreviewPage implements OnInit {
 
   launchCamera() {
     const cameraPreviewOptions: CameraPreviewOptions = {
-      position: 'front', // front or rear
+      position: 'rear', // front or rear
       parent: 'content', // the id on the ion-content
       className: '',
       width: window.screen.width, //width of the camera display
