@@ -57,11 +57,11 @@ Rename the provided .app. constant example to app.copnstnt and fill in the requi
 ### Android manifest
 
 android.permission.INTERNET
-android.permission.ACCESS_COARSE_LOCATION"/>
-android.permission.ACCESS_FINE_LOCATION"/>
-android.permission.BLUETOOTH"/>
+android.permission.ACCESS_COARSE_LOCATION
+android.permission.ACCESS_FINE_LOCATION
+android.permission.BLUETOOTH
 android.permission.BLUETOOTH_SCAN
-android.permission.BLUETOOTH_ADVERTISE"/>
+android.permission.BLUETOOTH_ADVERTISE
 android.permission.CAMERA
 android.permission.VIBRATE
 android.permission.WRITE_EXTERNAL_STORAGE
