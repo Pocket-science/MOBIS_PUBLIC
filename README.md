@@ -56,15 +56,15 @@ Rename the provided .app. constant example to app.copnstnt and fill in the requi
 
 ### Android manifest
 
-  <uses-permission android:name="android.permission.INTERNET"/>
-  <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-  <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-  <uses-permission android:name="android.permission.BLUETOOTH"/>
-  <uses-permission android:name="android.permission.BLUETOOTH_SCAN"/>
-  <uses-permission android:name="android.permission.BLUETOOTH_ADVERTISE"/>
-  <uses-permission android:name="android.permission.CAMERA"/>
-  <uses-permission android:name="android.permission.VIBRATE"/>
-  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+android.permission.INTERNET
+android.permission.ACCESS_COARSE_LOCATION"/>
+android.permission.ACCESS_FINE_LOCATION"/>
+android.permission.BLUETOOTH"/>
+android.permission.BLUETOOTH_SCAN
+android.permission.BLUETOOTH_ADVERTISE"/>
+android.permission.CAMERA
+android.permission.VIBRATE
+android.permission.WRITE_EXTERNAL_STORAGE
 
 ### IOS capability
 Add capabilities: Push notifications and Apple logon
