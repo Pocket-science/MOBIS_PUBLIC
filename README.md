@@ -52,7 +52,23 @@ Rename the provided .app. constant example to app.copnstnt and fill in the requi
 1. Clone the repository
 2. Install the dependencies 
 	npm install
-3. Run the app
+3.  Add these entries to Android and ios
+
+### Android manifest
+
+  <uses-permission android:name="android.permission.INTERNET"/>
+  <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+  <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+  <uses-permission android:name="android.permission.BLUETOOTH"/>
+  <uses-permission android:name="android.permission.BLUETOOTH_SCAN"/>
+  <uses-permission android:name="android.permission.BLUETOOTH_ADVERTISE"/>
+  <uses-permission android:name="android.permission.CAMERA"/>
+  <uses-permission android:name="android.permission.VIBRATE"/>
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+### IOS capability
+Add capabilities: Push notifications and Apple logon
+Needed permissions (add to info.plist): camera, bluetooth, GPS 
 
 
 
@@ -70,9 +86,12 @@ Push notifications
 
 # Plugin description
 ### General description
+We created some sensor plugins for example. Sensors can be native (camera, GPS) or external (iSPEX and Canair.io)
+
 
 ## CANAIR.IO
 ### Description 
+Canair.io (see website) is a bluetooth peripheral to get PM2.5 and CO2 (depending on model) out. Connection is made via bluetooth.
 
 ## MINI SECCHI
 ### Description of the mobis Mini Secchi Plugin
